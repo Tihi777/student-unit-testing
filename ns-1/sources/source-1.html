@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Student</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Student (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Student</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (3/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    14,7%
+  </span>
+  <span class="absValue">
+    (5/34)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;class Student {
+<i class="no-highlight">2</i>&nbsp;    //пол€ класса
+<i class="no-highlight">3</i>&nbsp;    private String firstName;
+<i class="no-highlight">4</i>&nbsp;    private String lastName;
+<i class="no-highlight">5</i>&nbsp;    private int age;
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;    //конструктор с аргументами
+<b class="nc"><i class="no-highlight">8</i>&nbsp;    public Student(String firstName, String lastName, int age) {</b>
+<b class="nc"><i class="no-highlight">9</i>&nbsp;        setFirstName(firstName);</b>
+<b class="nc"><i class="no-highlight">10</i>&nbsp;        setLastName(lastName);</b>
+<b class="nc"><i class="no-highlight">11</i>&nbsp;        setAge(age);</b>
+<i class="no-highlight">12</i>&nbsp;    }
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;    //конструктор по умолчанию
+<b class="fc"><i class="no-highlight">15</i>&nbsp;    public Student() {</b>
+<i class="no-highlight">16</i>&nbsp;    }
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;    //геттеры и сеттеры
+<i class="no-highlight">19</i>&nbsp;    public String getFirstName() {
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        return firstName;</b>
+<i class="no-highlight">21</i>&nbsp;    }
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;    //сеттер дл€ имени
+<i class="no-highlight">24</i>&nbsp;    public void setFirstName(String firstName) {
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        if (firstName.length() &gt; 1) {</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;            this.firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase();</b>
+<i class="no-highlight">27</i>&nbsp;        } else {
+<b class="fc"><i class="no-highlight">28</i>&nbsp;            this.firstName = firstName.toUpperCase();</b>
+<i class="no-highlight">29</i>&nbsp;        }
+<i class="no-highlight">30</i>&nbsp;    }
+<i class="no-highlight">31</i>&nbsp;
+<i class="no-highlight">32</i>&nbsp;    public String getLastName() {
+<b class="nc"><i class="no-highlight">33</i>&nbsp;        return lastName;</b>
+<i class="no-highlight">34</i>&nbsp;    }
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;    //сеттер дл€ фио
+<i class="no-highlight">37</i>&nbsp;    public void setLastName(String lastName) {
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        if (lastName.contains(&quot;[a-zA-Z]+&quot;) == false) {</b>
+<b class="nc"><i class="no-highlight">39</i>&nbsp;            this.lastName = lastName.replaceAll(&quot;\\d&quot;, &quot;&quot;);</b>
+<i class="no-highlight">40</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">41</i>&nbsp;        if (lastName.length() &gt;= 2) {</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;            this.lastName = Character.toUpperCase(this.lastName.charAt(0)) + this.lastName.substring(1).toLowerCase();</b>
+<i class="no-highlight">43</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">44</i>&nbsp;            this.lastName = &quot;Ivanov&quot;;</b>
+<i class="no-highlight">45</i>&nbsp;        }
+<i class="no-highlight">46</i>&nbsp;    }
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;    public int getAge() {
+<b class="nc"><i class="no-highlight">49</i>&nbsp;        return age;</b>
+<i class="no-highlight">50</i>&nbsp;    }
+<i class="no-highlight">51</i>&nbsp;
+<i class="no-highlight">52</i>&nbsp;    public void setAge(int age) {
+<b class="nc"><i class="no-highlight">53</i>&nbsp;        this.age = age &gt; 17 &amp;&amp; age &lt;= 50 ? age : 18;</b>
+<i class="no-highlight">54</i>&nbsp;    }
+<i class="no-highlight">55</i>&nbsp;
+<i class="no-highlight">56</i>&nbsp;    //печать ‘»ќ
+<i class="no-highlight">57</i>&nbsp;    public String getFullName() {
+<b class="nc"><i class="no-highlight">58</i>&nbsp;        return getLastName() + &quot; &quot; + getFirstName();</b>
+<i class="no-highlight">59</i>&nbsp;    }
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;    //метод дл€ расчета среднего возраста
+<i class="no-highlight">62</i>&nbsp;    public static int avgAge(Student[] array) {
+<b class="nc"><i class="no-highlight">63</i>&nbsp;        int avg = 0;</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;        int ageSum = 0;</b>
+<i class="no-highlight">65</i>&nbsp;
+<b class="nc"><i class="no-highlight">66</i>&nbsp;        for (int i = 0; i &lt; array.length; i++) {</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;            ageSum += array[i].age;</b>
+<i class="no-highlight">68</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">69</i>&nbsp;        avg = ageSum / array.length;</b>
+<i class="no-highlight">70</i>&nbsp;
+<b class="nc"><i class="no-highlight">71</i>&nbsp;        return avg;</b>
+<i class="no-highlight">72</i>&nbsp;    }
+<i class="no-highlight">73</i>&nbsp;
+<i class="no-highlight">74</i>&nbsp;    //метод дл€ расчета минимального возраста
+<i class="no-highlight">75</i>&nbsp;    public static int minAge(Student[] array) {
+<i class="no-highlight">76</i>&nbsp;
+<b class="nc"><i class="no-highlight">77</i>&nbsp;        int min = 100;        // текущий минимальный возраст</b>
+<i class="no-highlight">78</i>&nbsp;
+<b class="nc"><i class="no-highlight">79</i>&nbsp;        for (int i = 0; i &lt; array.length; i++) {</b>
+<b class="nc"><i class="no-highlight">80</i>&nbsp;            if (array[i].getAge() &lt; min) {</b>
+<b class="nc"><i class="no-highlight">81</i>&nbsp;                min = array[i].getAge();</b>
+<i class="no-highlight">82</i>&nbsp;            }
+<i class="no-highlight">83</i>&nbsp;
+<i class="no-highlight">84</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">85</i>&nbsp;        return min;</b>
+<i class="no-highlight">86</i>&nbsp;    }
+<i class="no-highlight">87</i>&nbsp;
+<i class="no-highlight">88</i>&nbsp;    //метод дл€ расчета максимального возраста
+<i class="no-highlight">89</i>&nbsp;    public static int maxAge(Student[] array) {
+<i class="no-highlight">90</i>&nbsp;
+<b class="nc"><i class="no-highlight">91</i>&nbsp;        int max = 0; // текущий максимальный возраст</b>
+<i class="no-highlight">92</i>&nbsp;
+<b class="nc"><i class="no-highlight">93</i>&nbsp;        for (int i = 0; i &lt; array.length; i++) {</b>
+<b class="nc"><i class="no-highlight">94</i>&nbsp;            if (array[i].getAge() &gt; max) {</b>
+<b class="nc"><i class="no-highlight">95</i>&nbsp;                max = array[i].getAge();</b>
+<i class="no-highlight">96</i>&nbsp;            }
+<i class="no-highlight">97</i>&nbsp;
+<i class="no-highlight">98</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">99</i>&nbsp;        return max;</b>
+<i class="no-highlight">100</i>&nbsp;    }
+<i class="no-highlight">101</i>&nbsp;
+<i class="no-highlight">102</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-11-22 14:52</div>
+</div>
+</body>
+</html>
